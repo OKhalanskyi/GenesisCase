@@ -20,7 +20,8 @@
             "components/*": ["components/*"],
             "utils/*": ["utils/*"],
             "assets/*": ["assets/*"],
-            "app/*": ["app/*"]
+            "app/*": ["app/*"],
+            "pages/*": ["pages/*"]
         }
     },
     "include": ["src"],

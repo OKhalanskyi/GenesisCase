@@ -1,19 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom'
 import MainPage from '../../pages/MainPage/MainPage'
 import CoursePage from '../../pages/CoursePage/CoursePage'
-import Layout from 'components/Layout/Layout'
-
-import { getAllCoursesLoader } from 'app/router/loaders/getAllCoursesLoader'
+import Root from 'components/Root/Root'
+import { getTokenLoader } from './loaders/getTokenLoader'
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: <Root />,
+        loader: getTokenLoader,
         children: [
             {
                 element: <MainPage />,
                 index: true,
-                loader: getAllCoursesLoader,
             },
             {
                 path: '/:id',

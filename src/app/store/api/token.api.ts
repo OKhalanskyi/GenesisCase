@@ -1,12 +1,23 @@
-export interface IToken {
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+export interface getTokenResponse {
     token: string
 }
 
-export const getToken = async () => {
-    const data = await fetch(
-        import.meta.env.VITE_BASE_URL + import.meta.env.VITE_GET_TOKEN,
-    )
-    const token: IToken = await data.json()
-    localStorage.setItem('token', token.token)
-}
-//rework later
+export const authApi = createApi({
+    reducerPath: 'authApi',
+    tagTypes: ['Token'],
+    baseQuery: fetchBaseQuery({
+        baseUrl: import.meta.env.VITE_BASE_URL,
+    }),
+    endpoints: (builder) => ({
+        getToken: builder.query<getTokenResponse, void>({
+            query: () => ({
+                url: import.meta.env.VITE_GET_TOKEN,
+            }),
+            providesTags: (result) => ['Token'],
+        }),
+    }),
+})
+
+export const { useGetTokenQuery } = authApi

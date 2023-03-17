@@ -10,6 +10,11 @@ export default defineConfig({
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/wisey/, ''),
             },
+            '/video': {
+                target: 'https://wisey.app',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/video/, ''),
+            },
         },
     },
     plugins: [react()],

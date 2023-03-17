@@ -11,18 +11,6 @@ import { store } from 'app/store/store'
 const theme = createTheme({
     palette: {
         mode: 'dark',
-        primary: {
-            // Purple and green play nicely together.
-            main: '#fff',
-        },
-        secondary: {
-            // This is green.A700 as hex.
-            main: '#11cb5f',
-        },
-        background: {
-            default: '#000000',
-            paper: '#000011',
-        },
     },
 })
 
@@ -30,7 +18,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
             <ThemeProvider theme={theme}>
-                <RouterProvider router={router} />
+                <RouterProvider
+                    router={router}
+                    fallbackElement={<h1>entering</h1>}
+                />
             </ThemeProvider>
         </Provider>
     </React.StrictMode>,

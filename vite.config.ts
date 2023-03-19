@@ -16,6 +16,8 @@ export default defineConfig({
                 rewrite: (path) => path.replace(/^\/video/, ''),
             },
         },
+        host: true,
+        port: 4308,
     },
     plugins: [react()],
     resolve: {

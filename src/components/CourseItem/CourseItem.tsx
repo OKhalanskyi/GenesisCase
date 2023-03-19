@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography'
-import { useGetCourseByIdQuery } from 'app/store/api/course.api'
+import { useGetCourseByIdQuery } from '../../app/store/api/course.api'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { NavLink, useNavigate } from 'react-router-dom'

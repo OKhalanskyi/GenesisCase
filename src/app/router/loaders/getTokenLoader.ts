@@ -1,6 +1,6 @@
-import { store } from 'app/store/store'
-import { courseApi } from 'app/store/api/course.api'
-import { authApi } from 'app/store/api/token.api'
+import { store } from '../../../app/store/store'
+import { courseApi } from '../../../app/store/api/course.api'
+import { authApi } from '../../../app/store/api/token.api'
 
 export const getTokenLoader = async () => {
     if (localStorage.getItem('token')) {

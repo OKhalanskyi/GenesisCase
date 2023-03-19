@@ -13,6 +13,7 @@
     "dependencies": {
         "@emotion/react": "^11.10.6",
         "@emotion/styled": "^11.10.6",
+        "@mui/icons-material": "^5.11.11",
         "@mui/material": "^5.11.13",
         "@reduxjs/toolkit": "^1.9.3",
         "query-string": "^8.1.0",
@@ -20,7 +21,8 @@
         "react-dom": "^18.2.0",
         "react-player": "^2.12.0",
         "react-redux": "^8.0.5",
-        "react-router-dom": "^6.9.0"
+        "react-router-dom": "^6.9.0",
+        "sass": "^1.59.3"
     },
     "devDependencies": {
         "@types/react": "^18.0.27",

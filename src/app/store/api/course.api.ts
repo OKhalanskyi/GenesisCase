@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICourse } from '../../../models/ICourse'
+import { ICourse, ICourseDetails } from '../../../models/ICourse'
 
 export interface getCoursesResponse {
     courses: ICourse[]
@@ -25,7 +25,14 @@ export const courseApi = createApi({
             }),
             providesTags: (result) => ['Course'],
         }),
+        getCourseById: builder.query<ICourseDetails, string>({
+            query: (id) => ({
+                url: `${import.meta.env.VITE_FETCH_COURSES}/${id}`,
+                credentials: 'include',
+            }),
+            // providesTags: (result, error, id) => [{type:'Course', id}],
+        }),
     }),
 })
 
-export const { useGetAllCoursesQuery } = courseApi
+export const { useGetAllCoursesQuery, useGetCourseByIdQuery } = courseApi

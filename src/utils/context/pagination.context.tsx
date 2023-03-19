@@ -9,7 +9,7 @@ import {
     useEffect,
     useState,
 } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 export interface IPaginationContext {
     totalPages: number
@@ -31,12 +31,11 @@ type PaginationProviderProps = {
 
 const PaginationProvider = (props: PaginationProviderProps) => {
     const { data, isLoading, error } = useGetAllCoursesQuery()
-    const location = useLocation()
-    const parsedUrl = queryString.parse(location.search)
-    const pageParsedUrl = parsedUrl.page ? Number(parsedUrl.page) : 1
-    const currentPage = pageParsedUrl
+    const [searchParams, setSearchPArams] = useSearchParams()
+    const currentPage = Number(searchParams.get('page')) || 1
     const coursesPerPage = 10
-    const totalPages = Math.ceil((data?.courses.length || 1) / coursesPerPage)
+    const totalPages =
+        Math.ceil((data?.courses?.length || 1) / coursesPerPage) || 1
     const lastIndex = currentPage * coursesPerPage
     const firstIndex = currentPage * coursesPerPage - coursesPerPage
     const currentCourses = data?.courses.slice(firstIndex, lastIndex)

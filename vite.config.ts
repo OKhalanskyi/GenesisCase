@@ -20,13 +20,4 @@ export default defineConfig({
         port: 4308,
     },
     plugins: [react()],
-    resolve: {
-        alias: {
-            components: 'src/components',
-            app: 'src/app',
-            assets: 'src/assets',
-            utils: 'src/utils',
-            pages: 'src/pages',
-        },
-    },
 })

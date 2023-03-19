@@ -1,6 +1,6 @@
-import { useGetAllCoursesQuery } from 'app/store/api/course.api'
-import { useGetTokenQuery } from 'app/store/api/token.api'
-import { ICourse } from 'models/ICourse'
+import { useGetAllCoursesQuery } from '../../app/store/api/course.api'
+import { useGetTokenQuery } from '../../app/store/api/token.api'
+import { ICourse } from '../../models/ICourse'
 import queryString from 'query-string'
 import {
     createContext,

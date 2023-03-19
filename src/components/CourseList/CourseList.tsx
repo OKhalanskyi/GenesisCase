@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useGetAllCoursesQuery } from 'app/store/api/course.api'
-import CourseItem from 'components/CourseItem/CourseItem'
-import PaginationBar from 'components/PaginationBar/PaginationBar'
+import { useGetAllCoursesQuery } from '../../app/store/api/course.api'
+import CourseItem from '../../components/CourseItem/CourseItem'
+import PaginationBar from '../../components/PaginationBar/PaginationBar'
 import {
     useLocation,
     useNavigate,
@@ -10,11 +10,11 @@ import {
 } from 'react-router-dom'
 import queryString from 'query-string'
 import { useSelector } from 'react-redux'
-import { RootState } from 'app/store/store'
-import { PaginationContext } from 'utils/context/pagination.context'
+import { RootState } from '../../app/store/store'
+import { PaginationContext } from '../../utils/context/pagination.context'
 import styles from './courseList.module.scss'
 import Skeleton from '@mui/material/Skeleton'
-import SkeletonList from 'components/Skeleton/SkeletonList'
+import SkeletonList from '../../components/Skeleton/SkeletonList'
 
 const CourseList = () => {
     const context = useContext(PaginationContext)

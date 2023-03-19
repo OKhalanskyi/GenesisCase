@@ -4,8 +4,8 @@ import { Box, Container, useTheme } from '@mui/material'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import AppBar from '@mui/material/AppBar'
-import Header from 'components/Header/Header'
-import { useGetTokenQuery } from 'app/store/api/token.api'
+import Header from '../../components/Header/Header'
+import { useGetTokenQuery } from '../../app/store/api/token.api'
 
 const Root = () => {
     return (
